@@ -2,6 +2,7 @@ import { desc } from "drizzle-orm";
 import Image from "next/image";
 import React from "react";
 
+import BrandList from "@/components/common/brand-list";
 import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
@@ -15,7 +16,6 @@ const Home = async () => {
       variants: true,
     },
   });
-  // console.log(products);
 
   const newlyCreatedProducts = await db.query.productTable.findMany({
     orderBy: [desc(productTable.createdAt)],
@@ -40,7 +40,7 @@ const Home = async () => {
             className="h-auto w-full"
           />
         </div>
-        <ProductList title="Marcas parceiras" products={products} />
+        <BrandList title="Marcas parceiras" />
 
         <ProductList title="Mais vendidos" products={products} />
 
