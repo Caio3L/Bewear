@@ -67,11 +67,13 @@ const CartItem = ({
           className="rounded-lg"
         />
         <div className="flex flex-col gap-1">
-          <p className="text-sm font-semibold">{productName}</p>
+          <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+            {productName}
+          </p>
           <p className="text-muted-foreground text-xs font-medium">
             {productVariantName}
           </p>
-          <div className="flex w-[100px] items-center justify-between rounded-lg border p-1">
+          <div className="flex w-[100px] items-center justify-between rounded-lg border border-gray-200 p-1 dark:border-gray-700">
             <Button
               className="h-4 w-4"
               variant="ghost"
@@ -79,7 +81,9 @@ const CartItem = ({
             >
               <MinusIcon />
             </Button>
-            <p className="text-xs font-medium">{quantity}</p>
+            <p className="text-xs font-medium text-gray-900 dark:text-gray-100">
+              {quantity}
+            </p>
             <Button
               className="h-4 w-4"
               variant="ghost"
@@ -94,7 +98,7 @@ const CartItem = ({
         <Button variant="outline" size="icon" onClick={handleDeleteClick}>
           <TrashIcon />
         </Button>
-        <p className="text-sm font-bold">
+        <p className="text-sm font-bold text-gray-900 dark:text-gray-100">
           {formatCentsToBRL(productVariantPriceInCents)}
         </p>
       </div>

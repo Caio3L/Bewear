@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 import BrandList from "@/components/common/brand-list";
+import CategoryDesktop from "@/components/common/category-desktop";
 import CategorySelector from "@/components/common/category-selector";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
@@ -30,7 +31,9 @@ const Home = async () => {
       <Header />
       <div className="space-y-6">
         <div className="p-5">
-          {/* Forma para dimensionar a imagem de acordo com o tamanho da tela */}
+          <div className="mx-12 hidden px-8 md:block">
+            <CategoryDesktop categories={categories} />
+          </div>
           <Image
             src="/banner-01.png"
             alt="Leve uma vida com estilo"

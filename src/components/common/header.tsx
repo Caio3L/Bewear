@@ -16,6 +16,7 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Cart } from "./cart";
+import { ThemeToggle } from "./theme-toggle";
 
 export const Header = () => {
   const { data: session } = authClient.useSession();
@@ -26,6 +27,7 @@ export const Header = () => {
       </Link>
 
       <div className="flex items-center gap-3">
+        <ThemeToggle />
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon">
@@ -34,7 +36,9 @@ export const Header = () => {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
+              <SheetTitle className="text-gray-900 dark:text-gray-100">
+                Menu
+              </SheetTitle>
             </SheetHeader>
             <div className="px-5">
               {session?.user ? (
@@ -52,7 +56,9 @@ export const Header = () => {
                       </Avatar>
 
                       <div>
-                        <h3 className="font-semibold">{session?.user?.name}</h3>
+                        <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+                          {session?.user?.name}
+                        </h3>
                         <span className="text-muted-foreground block text-xs">
                           {session?.user?.email}
                         </span>
@@ -69,7 +75,9 @@ export const Header = () => {
                 </>
               ) : (
                 <div className="flex items-center justify-between">
-                  <h2 className="font-semibold">Olá. Faça seu login!</h2>
+                  <h2 className="font-semibold text-gray-900 dark:text-gray-100">
+                    Olá. Faça seu login!
+                  </h2>
                   <Button size="icon" asChild variant="outline">
                     <Link href="/authentication">
                       <LogInIcon />

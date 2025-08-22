@@ -51,12 +51,14 @@ const brands: Brand[] = [
 const BrandList = ({ title }: { title: string }) => {
   return (
     <div className="space-y-6">
-      <h3 className="px-5 font-semibold">{title}</h3>
+      <h3 className="px-5 font-semibold text-gray-900 dark:text-gray-100">
+        {title}
+      </h3>
       <div className="flex w-full gap-4 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
         {brands.map((brand) => (
           <div
             key={brand.id}
-            className="flex min-w-[120px] flex-col items-center rounded-lg border border-gray-200 bg-white p-3 shadow-sm"
+            className="flex min-w-[120px] flex-col items-center rounded-lg border border-gray-200 bg-white p-3 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-900/20"
           >
             <div className="mb-2 flex h-10 w-10 items-center justify-center">
               {brand.logo ? (
@@ -75,7 +77,7 @@ const BrandList = ({ title }: { title: string }) => {
                 </div>
               )}
             </div>
-            <h4 className="text-center text-xs font-medium text-gray-900">
+            <h4 className="text-center text-xs font-medium text-gray-900 dark:text-gray-100">
               {brand.name}
             </h4>
           </div>
