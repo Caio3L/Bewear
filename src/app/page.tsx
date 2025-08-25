@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { desc } from "drizzle-orm";
 import Image from "next/image";
 import React from "react";
@@ -63,6 +64,7 @@ const Home = async () => {
         </div>
         <ProductList title="Novos produtos" products={newlyCreatedProducts} />
         <Footer />
+        <SpeedInsights />
       </div>
     </>
   );
